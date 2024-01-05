@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap : 10px;
+    background-color: rgb(240, 240, 240);
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    width: 10%;
+    margin-right: 0.5%;
+    text-align: center;
+    line-height: 3;
+    color: black;
+  }
+
+  a:hover{
+    color:greenyellow;
+  }
+
+  a:active {
+    color: green;
+  }
+
+  a:focus {
+    color: green;
+  }

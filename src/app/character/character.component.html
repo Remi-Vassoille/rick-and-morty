@@ -1,0 +1,53 @@
+<ng-container *ngIf="displayAll">
+
+  <div class="search">
+    <form [formGroup]="searchForm">
+      <label for="searchInput">Search for a character : </label>
+      <input type="text" id="searchInput" formControlName="searchInput">
+    </form>
+  </div>
+
+  <ng-container *ngIf="!isEmpty">
+
+    <div class="grid-container" id="charactersList">
+      <ng-container *ngIf="characters.length > 0">
+        <div class="grid-item" *ngFor="let item of characters">
+          <div class="d-flex flex-column align-items-center">
+            <img [src]="item.image" (click)="getSelectedCharacter(item.id)" style="cursor: pointer;" height="200px" />
+            <button (click)="getSelectedCharacter(item.id)" style="cursor: pointer; width: 89%;">{{ item.name }}</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="pageSelector">
+      <button (click)="goLeftPage()" style="margin-right: 5px;">&lt;=</button>
+      <div class="pageNumber">{{this.page}}</div>
+      <button (click)="goRightPage()" style="margin-left: 5px;">=&gt;</button>
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngIf="isEmpty">
+    <h1 class="description">No character found</h1>
+  </ng-container>
+
+</ng-container>
+
+<ng-container *ngIf="!displayAll">
+
+  <ng-container *ngIf="character">
+    <div class="characterDescription">
+      <br>
+      <img [src]="character.image" class="characterImage"/>
+      <div class="characteristic">
+        <h3>{{character.name}}</h3>
+        <p>Status : {{character.status}}</p>
+        <p>Species : {{character.species}}</p>
+        <p>Gender : {{character.gender}}</p>
+        <button (click)="goMainPage()" style="padding: 5px 50px;">Go back</button>
+      </div>
+    </div>
+  </ng-container>
+    
+</ng-container>

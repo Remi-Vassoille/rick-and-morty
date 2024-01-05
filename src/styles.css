@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  
+.grid-item {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grid-content {
+  display: flex;
+  flex-direction: column;
+}
+
+#insideCharacterList{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.description{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 8%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pageSelector {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: rgb(240, 240, 240);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mainPageButton{
+  padding: 5px 20px;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}

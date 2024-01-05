@@ -1,0 +1,38 @@
+#charactersList{
+  margin-right: 15%;
+  margin-left: 15%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+}
+
+.search{
+  display: flex;
+  justify-content: center;
+  margin-top: 6%;
+}
+
+.characterDescription{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  margin-left: 35%;
+  margin-right: 35%;
+  margin-top: 5%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  background-color: ghostwhite;
+}
+
+.characteristic{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.characterImage{
+  margin-left: 20%;
+  margin-right: 20%;
+  width: 60%;
+  aspect-ratio: 1/1;
+}

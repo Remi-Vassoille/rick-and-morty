@@ -1,0 +1,44 @@
+<ng-container *ngIf="displayAll">
+
+    <div class="grid-container" id="episodesList">
+      <ng-container *ngIf="episodes.length > 0">
+        <div class="grid-item" *ngFor="let item of episodes">
+          <div class="grid-content">
+            <img [src]="'assets/rickandmorty.jpeg'" (click)="getSelectedEpisode(item.id)" style="cursor: pointer;" height="200px">
+            <button (click)="getSelectedEpisode(item.id)" style="cursor: pointer;">{{ item.name }}</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="pageSelector">
+      <button (click)="goLeftPage()" style="margin-right: 5px;">&lt;=</button>
+      <div class="pageNumber">{{this.page}}</div>
+      <button (click)="goRightPage()" style="margin-left: 5px;">=&gt;</button>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="!displayAll">
+  <div class="episodeDescription">
+    <div class="description">
+      <h1>{{episode.name}}</h1>
+      <p>Episode : {{episode.episode}}</p>
+      <p>Air date : {{episode.air_date}}</p>
+      <button (click)="goMainPage()" class="mainPageButton">Go back</button>
+      <h4 class="title">Characters in this episode</h4>
+    </div>
+    <div class="grid-container" id="insideCharacterList">
+      <ng-container *ngIf="characters.length > 0">
+        <div class="grid-item" *ngFor="let item of characters">
+          <div class="grid-content">
+            <img [src]="item?.image" (click)="goToSelectedCharacter(item.id)" height="200px" />
+            <button (click)="goToSelectedCharacter(item.id)" style="cursor: pointer;">{{ item.name }}</button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+    <ng-container *ngIf="characters.length == 0">
+      <h2 class="description">No residents on this location</h2>
+    </ng-container>
+  </div> 
+</ng-container>
